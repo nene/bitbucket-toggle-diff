@@ -1,7 +1,7 @@
 "use strict";
 
-$(function(){
-
+// Expose as global to be able to invoke manually
+window.toggleDiff = function() {
     $(".diff-container").each(function(){
         var content = $(this).find(".diff-content-container");
 
@@ -17,5 +17,7 @@ $(function(){
 
         $(this).find(".diff-actions").prepend(group);
     });
+}
 
-});
+// Run automatically on page load
+$(window.toggleDiff);
