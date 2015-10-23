@@ -17,6 +17,24 @@ window.toggleDiff = function() {
 
         $(this).find(".diff-actions").prepend(group);
     });
+
+    $(".comment-thread-container").each(function(){
+        var $comment = $(this);
+
+        var $link = $("<a href='#'>Hide</a>");
+        $link.on("click", function(e) {
+            e.preventDefault();
+
+            var isHidden = ($link.text() === "Hide");
+            $link.text(isHidden ? "Show" : "Hide");
+            $comment.css("opacity", isHidden ? 0.5 : 1);
+        });
+
+        var $li = $("<li></li>");
+        $li.append($link)
+
+        $comment.find(" > .comments-list > .comment > article > .comment-actions").append($li);
+    });
 }
 
 // Run automatically on page load
