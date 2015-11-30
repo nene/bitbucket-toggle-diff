@@ -55,10 +55,13 @@ window.toggleDiff = function() {
     function addTagSelector($comment) {
         var $input = $("<input type='text' class='comment-tag-input'>");
         var $tags = $("<span class='comment-tags'></span>");
+        var allTags = new Tags($comment.attr("id"));
 
         $input.on("keydown", function(e) {
-            if (e.keyCode === 13 && !/^ *$/.test($input.val())) {
-                addTag($tags, $input.val());
+            var tagName = $input.val();
+            if (e.keyCode === 13 && !/^ *$/.test(tagName)) {
+                allTags.add(tagName);
+                addTag($tags, tagName, allTags);
                 $input.val("");
             }
         });
@@ -67,19 +70,45 @@ window.toggleDiff = function() {
         $li.append($tags);
         $li.append($input);
 
+        allTags.forEach(function(tagName) {
+            addTag($tags, tagName, allTags);
+        });
+
         $comment.find(" > .comment-actions").append($li);
     }
 
-    function addTag($tags, tagName) {
+    function addTag($tags, tagName, allTags) {
         var $tagLink = $("<a href='#' class='comment-tag' title='Click to remove'>#"+tagName+"</a>");
 
         $tagLink.on("click", function(e) {
             e.preventDefault();
             $tagLink.remove();
+            allTags.remove(tagName);
         });
 
         $tags.append($tagLink);
     }
+
+    function Tags(commentId) {
+        this.id = commentId;
+        this.tags = localStorage[commentId] ? JSON.parse(localStorage[commentId]).tags : [];
+    }
+    Tags.prototype = {
+        add: function(tag) {
+            this.tags.push(tag);
+            this.save();
+        },
+        remove: function(tag) {
+            this.tags = this.tags.filter(function(t) { return t !== tag; })
+            this.save();
+        },
+        save: function() {
+            localStorage[this.id] = JSON.stringify({tags: this.tags});
+        },
+        forEach: function(cb) {
+            this.tags.forEach(cb);
+        }
+    };
 
     $(".comment-thread-container > .comments-list > .comment > article").each(function(){
         addShowHideLink($(this));
