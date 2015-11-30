@@ -16,6 +16,28 @@ $(function() {
         "} " +
         "</style>"
     );
+    $("body").append(
+        "<datalist id='comment-tags-list'>" +
+            "<option value='Single Responsibility' />" +
+            "<option value='DRY' />" +
+            "<option value='YAGNI' />" +
+            "<option value='KISS' />" +
+            "<option value='Open-Closed' />" +
+            "<option value='Liskov Substitution' />" +
+            "<option value='Law of Demeter' />" +
+
+            "<option value='BEM' />" +
+            "<option value='Naming' />" +
+            "<option value='Needless code' />" +
+            "<option value='Whitespace' />" +
+            "<option value='JavaScript-specific' />" +
+            "<option value='Docs' />" +
+
+            "<option value='Test missing' />" +
+            "<option value='Test docs' />" +
+            "<option value='Test with hard-coded data' />" +
+        "</datalist>"
+    )
 });
 
 // Expose as global to be able to invoke manually
@@ -53,7 +75,7 @@ window.toggleDiff = function() {
     }
 
     function addTagSelector($comment) {
-        var $input = $("<input type='text' class='comment-tag-input'>");
+        var $input = $("<input type='text' class='comment-tag-input' list='comment-tags-list'>");
         var $tags = $("<span class='comment-tags'></span>");
         var allTags = new Tags($comment.attr("id"));
 
