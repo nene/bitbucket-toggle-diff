@@ -29,6 +29,7 @@ $(function() {
             "<option value='BEM' />" +
             "<option value='Naming' />" +
             "<option value='Needless code' />" +
+            "<option value='Consistency' />" +
             "<option value='Whitespace' />" +
             "<option value='JavaScript-specific' />" +
             "<option value='Docs' />" +
