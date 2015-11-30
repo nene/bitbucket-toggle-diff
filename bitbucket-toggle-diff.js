@@ -125,7 +125,8 @@ window.toggleDiff = function() {
             this.save();
         },
         save: function() {
-            localStorage[this.id] = JSON.stringify({tags: this.tags});
+            var commit = window.location.href.match(/commits\/([0-9a-f]+)(?:#.*)?$/)[1];
+            localStorage[this.id] = JSON.stringify({tags: this.tags, commit: commit});
         },
         forEach: function(cb) {
             this.tags.forEach(cb);
