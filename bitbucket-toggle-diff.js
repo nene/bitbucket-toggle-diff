@@ -133,7 +133,10 @@ window.toggleDiff = function() {
         }
     };
 
-    $(".comment-thread-container > .comments-list > .comment > article").each(function(){
+    $(  // Handle both general comments and comments within diffs
+        "#general-comments .comments-list > .comment > article, " +
+        ".comment-thread-container > .comments-list > .comment > article"
+    ).each(function(){
         addShowHideLink($(this));
         addTagSelector($(this));
     });
