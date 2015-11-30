@@ -47,7 +47,7 @@ window.toggleDiff = function() {
         });
 
         var $li = $("<li></li>");
-        $li.append($link)
+        $li.append($link);
 
         $comment.find(" > .comments-list > .comment > article > .comment-actions").append($li);
     }
