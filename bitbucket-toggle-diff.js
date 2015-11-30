@@ -49,7 +49,7 @@ window.toggleDiff = function() {
         var $li = $("<li></li>");
         $li.append($link);
 
-        $comment.find(" > .comments-list > .comment > article > .comment-actions").append($li);
+        $comment.find(" > .comment-actions").append($li);
     }
 
     function addTagSelector($comment) {
@@ -67,7 +67,7 @@ window.toggleDiff = function() {
         $li.append($tags);
         $li.append($input);
 
-        $comment.find(" > .comments-list > .comment > article > .comment-actions").append($li);
+        $comment.find(" > .comment-actions").append($li);
     }
 
     function addTag($tags, tagName) {
@@ -81,7 +81,7 @@ window.toggleDiff = function() {
         $tags.append($tagLink);
     }
 
-    $(".comment-thread-container").each(function(){
+    $(".comment-thread-container > .comments-list > .comment > article").each(function(){
         addShowHideLink($(this));
         addTagSelector($(this));
     });
