@@ -18,9 +18,7 @@ window.toggleDiff = function() {
         $(this).find(".diff-actions").prepend(group);
     });
 
-    $(".comment-thread-container").each(function(){
-        var $comment = $(this);
-
+    function addShowHideLink($comment) {
         var $link = $("<a href='#'>Hide</a>");
         $link.on("click", function(e) {
             e.preventDefault();
@@ -34,6 +32,10 @@ window.toggleDiff = function() {
         $li.append($link)
 
         $comment.find(" > .comments-list > .comment > article > .comment-actions").append($li);
+    }
+
+    $(".comment-thread-container").each(function(){
+        addShowHideLink($(this));
     });
 }
 
