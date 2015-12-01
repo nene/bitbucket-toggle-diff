@@ -46,8 +46,8 @@ $(function() {
 
 // Expose as global to be able to invoke manually
 window.toggleDiff = function() {
-    $(".diff-container").each(function(){
-        var content = $(this).find(".diff-content-container");
+    function addDiffShowHideButton($diffContainer) {
+        var content = $diffContainer.find(".diff-content-container");
 
         var button = $('<a href="#" class="aui-button aui-button-light" resolved="">Hide</a>');
         button.on("click", function(e) {
@@ -59,7 +59,11 @@ window.toggleDiff = function() {
         var group = $("<div class='aui-buttons'></div>");
         group.append(button);
 
-        $(this).find(".diff-actions").prepend(group);
+        $diffContainer.find(".diff-actions").prepend(group);
+    }
+
+    $(".diff-container").each(function(){
+        addDiffShowHideButton($(this));
     });
 
     function addShowHideLink($comment) {
