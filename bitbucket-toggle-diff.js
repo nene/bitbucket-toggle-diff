@@ -35,6 +35,7 @@ $(function() {
             "<option value='Whitespace' />" +
             "<option value='JavaScript-specific' />" +
             "<option value='Docs' />" +
+            "<option value='Magic numbers' />" +
 
             "<option value='Test missing' />" +
             "<option value='Test docs' />" +
