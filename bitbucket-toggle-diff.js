@@ -62,8 +62,60 @@ window.toggleDiff = function() {
         $diffContainer.find(".diff-actions").prepend(group);
     }
 
+    function isDiffLine($line) {
+        return $line.hasClass("addition") || $line.hasClass("deletion");
+    }
+
+    function findFirstDiffLine($line) {
+        while (isDiffLine($line.prev())) {
+            $line = $line.prev();
+        }
+        return $line;
+    }
+
+    function findDiffLines($startLine) {
+        var $line = findFirstDiffLine($startLine);
+        var lines = [$line];
+        while (isDiffLine($line.next())) {
+            $line = $line.next();
+            lines.push($line);
+        }
+        return lines;
+    }
+
+    function hideDiffLine($line) {
+        if ($line.hasClass("deletion")) {
+            $line.remove();
+        }
+        else {
+            $line.removeClass("addition").addClass("common");
+        }
+    }
+
+    function addDiffLineButtons($diffContainer) {
+        var $button = $("<button style='position:absolute; top:0; right: 0'>x</button>");
+
+        $diffContainer.on("mouseover", ".udiff-line", function(e) {
+            var $currentLine = $(e.target).closest(".udiff-line");
+            $button.remove();
+
+            if (!isDiffLine($currentLine)) {
+                return;
+            }
+
+            $currentLine.css({position: "relative"});
+            $currentLine.append($button);
+
+            $button.on("click", function() {
+                findDiffLines($currentLine).forEach(hideDiffLine);
+                $button.remove();
+            });
+        });
+    }
+
     $(".diff-container").each(function(){
         addDiffShowHideButton($(this));
+        addDiffLineButtons($(this));
     });
 
     function addShowHideLink($comment) {
