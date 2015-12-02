@@ -25,6 +25,7 @@ $(function() {
             "<option value='Open-Closed' />" +
             "<option value='Liskov Substitution' />" +
             "<option value='Law of Demeter' />" +
+            "<option value='Coupling' />" +
 
             "<option value='BEM' />" +
             "<option value='Naming' />" +
@@ -36,6 +37,7 @@ $(function() {
             "<option value='JavaScript-specific' />" +
             "<option value='Docs' />" +
             "<option value='Magic numbers' />" +
+            "<option value='Shared state' />" +
 
             "<option value='Test missing' />" +
             "<option value='Test docs' />" +
