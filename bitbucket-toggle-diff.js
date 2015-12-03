@@ -30,11 +30,13 @@ $(function() {
             "<option value='BEM' />" +
             "<option value='Naming' />" +
             "<option value='Needless code' />" +
+            "<option value='Dead code' />" +
             "<option value='Many parameters' />" +
             "<option value='OOP' />" +
             "<option value='Consistency' />" +
             "<option value='Whitespace' />" +
             "<option value='JavaScript-specific' />" +
+            "<option value='CSS-specific' />" +
             "<option value='Docs' />" +
             "<option value='Magic numbers' />" +
             "<option value='Shared state' />" +
