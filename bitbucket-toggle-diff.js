@@ -26,11 +26,14 @@ $(function() {
             "<option value='Liskov Substitution' />" +
             "<option value='Law of Demeter' />" +
             "<option value='Coupling' />" +
+            "<option value='Optimization' />" +
 
             "<option value='BEM' />" +
             "<option value='Naming' />" +
             "<option value='Needless code' />" +
+            "<option value='Shorten' />" +
             "<option value='Dead code' />" +
+            "<option value='Commented out code' />" +
             "<option value='Many parameters' />" +
             "<option value='OOP' />" +
             "<option value='Consistency' />" +
@@ -38,8 +41,11 @@ $(function() {
             "<option value='JavaScript-specific' />" +
             "<option value='CSS-specific' />" +
             "<option value='Docs' />" +
+            "<option value='Spelling/Grammar' />" +
             "<option value='Magic numbers' />" +
             "<option value='Shared state' />" +
+            "<option value='Code organization' />" +
+            "<option value='Commit style' />" +
 
             "<option value='Test missing' />" +
             "<option value='Test docs' />" +
