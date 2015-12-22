@@ -21,10 +21,6 @@ $(function() {
             "<option value='Single Responsibility' />" +
             "<option value='DRY' />" +
             "<option value='YAGNI' />" +
-            "<option value='KISS' />" +
-            "<option value='Open-Closed' />" +
-            "<option value='Liskov Substitution' />" +
-            "<option value='Law of Demeter' />" +
             "<option value='Coupling' />" +
             "<option value='Optimization' />" +
             "<option value='Encapsulation' />" +
