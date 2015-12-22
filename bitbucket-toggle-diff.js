@@ -27,6 +27,7 @@ $(function() {
             "<option value='Law of Demeter' />" +
             "<option value='Coupling' />" +
             "<option value='Optimization' />" +
+            "<option value='Encapsulation' />" +
 
             "<option value='BEM' />" +
             "<option value='Naming' />" +
@@ -44,12 +45,15 @@ $(function() {
             "<option value='Spelling/Grammar' />" +
             "<option value='Magic numbers' />" +
             "<option value='Shared state' />" +
+            "<option value='Side-effects' />" +
             "<option value='Code organization' />" +
             "<option value='Commit style' />" +
 
             "<option value='Test missing' />" +
             "<option value='Test docs' />" +
             "<option value='Test with hard-coded data' />" +
+            "<option value='Test does not work' />" +
+            "<option value='Test not a unit test' />" +
         "</datalist>"
     )
 });
