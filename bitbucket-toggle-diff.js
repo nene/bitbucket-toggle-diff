@@ -18,38 +18,36 @@ $(function() {
     );
     $("body").append(
         "<datalist id='comment-tags-list'>" +
-            "<option value='Single Responsibility' />" +
-            "<option value='DRY' />" +
-            "<option value='YAGNI' />" +
-            "<option value='Coupling' />" +
-            "<option value='Optimization' />" +
-            "<option value='Encapsulation' />" +
-
             "<option value='BEM' />" +
+            "<option value='Code organization' />" +
+            "<option value='Commented out code' />" +
+            "<option value='Commit style' />" +
+            "<option value='Consistency' />" +
+            "<option value='Coupling' />" +
+            "<option value='CSS-specific' />" +
+            "<option value='Dead code' />" +
+            "<option value='Docs' />" +
+            "<option value='DRY' />" +
+            "<option value='Encapsulation' />" +
+            "<option value='JavaScript-specific' />" +
+            "<option value='Magic numbers' />" +
+            "<option value='Many parameters' />" +
             "<option value='Naming' />" +
             "<option value='Needless code' />" +
-            "<option value='Shorten' />" +
-            "<option value='Dead code' />" +
-            "<option value='Commented out code' />" +
-            "<option value='Many parameters' />" +
             "<option value='OOP' />" +
-            "<option value='Consistency' />" +
-            "<option value='Whitespace' />" +
-            "<option value='JavaScript-specific' />" +
-            "<option value='CSS-specific' />" +
-            "<option value='Docs' />" +
-            "<option value='Spelling/Grammar' />" +
-            "<option value='Magic numbers' />" +
+            "<option value='Optimization' />" +
             "<option value='Shared state' />" +
+            "<option value='Shorten' />" +
             "<option value='Side-effects' />" +
-            "<option value='Code organization' />" +
-            "<option value='Commit style' />" +
-
-            "<option value='Test missing' />" +
+            "<option value='Single Responsibility' />" +
+            "<option value='Spelling/Grammar' />" +
             "<option value='Test docs' />" +
-            "<option value='Test with hard-coded data' />" +
             "<option value='Test does not work' />" +
+            "<option value='Test missing' />" +
             "<option value='Test not a unit test' />" +
+            "<option value='Test with hard-coded data' />" +
+            "<option value='Whitespace' />" +
+            "<option value='YAGNI' />" +
         "</datalist>"
     )
 });
