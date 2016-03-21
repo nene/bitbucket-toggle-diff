@@ -14,6 +14,10 @@ $(function() {
         "    position: relative !important;" +
         "    top: -1px !important;" +
         "} " +
+        // Remove the annoying pop-up menu of bitbucket
+        "div[aria-controls='sidebar-submenu0'] { " +
+        "    display: none;" +
+        "} " +
         "</style>"
     );
     $("body").append(
