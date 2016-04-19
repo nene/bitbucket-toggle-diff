@@ -58,22 +58,6 @@ $(function() {
 
 // Expose as global to be able to invoke manually
 window.toggleDiff = function() {
-    function addDiffShowHideButton($diffContainer) {
-        var content = $diffContainer.find(".diff-content-container");
-
-        var button = $('<a href="#" class="aui-button aui-button-light" resolved="">Hide</a>');
-        button.on("click", function(e) {
-            e.preventDefault();
-            content.toggle();
-            button.text(button.text() === "Hide" ? "Show" : "Hide");
-        });
-
-        var group = $("<div class='aui-buttons'></div>");
-        group.append(button);
-
-        $diffContainer.find(".diff-actions").prepend(group);
-    }
-
     function isDiffLine($line) {
         return $line.hasClass("addition") || $line.hasClass("deletion");
     }
@@ -126,7 +110,6 @@ window.toggleDiff = function() {
     }
 
     $(".diff-container").each(function(){
-        addDiffShowHideButton($(this));
         addDiffLineButtons($(this));
     });
 
