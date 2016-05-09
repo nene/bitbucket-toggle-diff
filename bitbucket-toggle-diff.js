@@ -180,7 +180,7 @@ window.toggleDiff = function() {
             this.save();
         },
         save: function() {
-            var commit = window.location.href.match(/commits\/([0-9a-f]+)(?:#.*)?$/)[1];
+            var commit = window.location.href.match(/commits\/([0-9a-f]+)(?:\?.*)(?:#.*)?$/)[1];
             localStorage[this.id] = JSON.stringify({tags: this.tags, commit: commit});
         },
         forEach: function(cb) {
